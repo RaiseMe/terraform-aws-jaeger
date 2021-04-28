@@ -2,8 +2,8 @@ resource "aws_lb" "jaeger" {
   count              = var.lb_arn == null ? 1 : 0
   tags               = var.tags
   name               = "${local.name_prefix}jaeger"
-  load_balancer_type = "network"
-  internal           = var.lb_internal
+  load_balancer_type = "application"
+  internal           = true
   subnets            = var.subnets
 }
 
