@@ -8,7 +8,7 @@ resource "aws_ecs_task_definition" "jaeger_collector" {
       [
           {
               "name": "${local.name_prefix}jaeger-collector",
-              "image": "quay.io/jaegertracing/jaeger-collector:1.23.0",
+              "image": "030728503398.dkr.ecr.us-east-1.amazonaws.com/jaeger-collector:latest",
               "portMappings": [
                   {
                       "containerPort": 14250,
