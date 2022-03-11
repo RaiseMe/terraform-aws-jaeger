@@ -64,7 +64,7 @@ data "aws_iam_policy_document" "lambda_assume" {
 
 resource "aws_iam_policy_attachment" "housekeep_lambda" {
   count      = var.storage_retention_days == null ? 0 : 1
-  name       = "jaeger-housekeep"
+  name       = "${local.name_prefix}jaeger-housekeep"
   roles      = [aws_iam_role.jaeger_housekeep[0].name]
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole"
 }
